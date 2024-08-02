@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package za.ac.tut.gui;
 
 import java.awt.BorderLayout;
@@ -18,10 +14,6 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-/**
- *
- * @author Student
- */
 public class GreetingsGUI extends JFrame {
     
     //panels
@@ -53,7 +45,8 @@ public class GreetingsGUI extends JFrame {
     private JButton exitBtn;
     
     public GreetingsGUI() {
-        //
+        
+        //configure the GUI
         setLayout(new BorderLayout());
         setTitle("Greetings UI");
         setSize(700, 750);
@@ -87,32 +80,41 @@ public class GreetingsGUI extends JFrame {
         greetingsTxtArea.setText("Hello [name] [surname]");
        
         
-        //create buttons
+        //create the buttons
         greetingBtn = new JButton("Greet");
         clearBtn = new JButton("Clear");
         exitBtn = new JButton("Exit");
         
+        //add name label textfield to the name panel
         namePnl.add(nameLbl);
         namePnl.add(nameTxtField);
         
+        //add surname label to the surname panel
         surnamePnl.add(surnameLbl);
         surnamePnl.add(surnameTxtField);
-        
+
+        //add name and surname panel to the colletive panel
         nameAndSurnamePnl.add(namePnl);
         nameAndSurnamePnl.add(surnamePnl);
-        
+
+        //add the greetings area to it's panel
         greetingsAreaPnl.add(greetingsTxtArea);
-        
+
+        //add buttons to their panel
         btnsPnl.add(greetingBtn);
         btnsPnl.add(clearBtn);
         btnsPnl.add(exitBtn);
-        
+
+        //add all the panels to the main panel
         mainPnl.add(nameAndSurnamePnl, BorderLayout.NORTH);
         mainPnl.add(greetingsAreaPnl, BorderLayout.CENTER);
         mainPnl.add(btnsPnl, BorderLayout.SOUTH);
-        
+
+         //add the main panel to the frame's panel
         add(headingPnl, BorderLayout.NORTH);
         add(mainPnl, BorderLayout.CENTER);
+
+        //make the frame visible
         setVisible(true); 
     }
 }
